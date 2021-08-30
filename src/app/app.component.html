@@ -14,10 +14,10 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a routerLink="/dashboard"  class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
+        <a routerLink="/dashboard" class="nav-link">Contact</a>
       </li>
     </ul>
 
@@ -147,9 +147,9 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a routerLink="/dashboard" class="brand-link">
       <img src="assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">Kamu Tech</span>
     </a>
 
     <!-- Sidebar -->
@@ -182,7 +182,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+            <a routerLink="/dashboard" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -191,19 +191,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index.html" class="nav-link active">
+                <a routerLink="/dashboard" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dashboard Kamutech</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a routerLink="/dashboardKamu" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dashboard Kamu İşçileri</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                <a routerLink="/dashboardSgk" class="nav-link">
                   <i class="nav-icon  far fa-circle nav-icon"></i>
                   <p>Dashboard Sgk360</p>
                 </a>
@@ -211,7 +211,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a routeLink="/pages" class="nav-link">
+            <a routerLink="/pages" routerLinkActive="active" class="nav-link">
               <i class="nav-icon fas fa-newspaper"></i>
               <p>
                 Pages
@@ -219,7 +219,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a routeLink="/articles" class="nav-link">
+            <a routerLink="/articles" class="nav-link">
               <i class="nav-icon fas fa-file"></i>
               <p>
                 Articles
@@ -227,7 +227,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a routeLink="/products" class="nav-link">
+            <a routerLink="/products" class="nav-link">
               <i class="nav-icon fab fa-product-hunt"></i>
               <p>
                 Products
@@ -235,7 +235,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a routeLink="/comments" class="nav-link">
+            <a routerLink="/comments" class="nav-link">
               <i class="nav-icon fas fa-comments"></i>
               <p>
                 Comments
@@ -375,111 +375,9 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
+   
     <!-- /.content-header -->
-
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
-        <div class="row">
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>44</h3>
-                <p>Pages</p>
-              </div>
-              <div class="icon">
-                <i class="far fa-image"></i>
-              </div>
-              <a routeLink="/pages" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-         
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-warning">
-              <div class="inner">
-              <h3>150</h3>
-              <p>Article</p>
-            </div>
-            <div class="icon">
-              <i class="fas fa-newspaper"></i>
-            </div>
-              <a routeLink="/articles" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>65</h3>
-                <p>Products</p>
-              </div>
-              <div class="icon">
-                <i class="fab fa-product-hunt"></i>
-              </div>
-              <a routeLink="/products" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>53</h3>
-                <p>Comments</p>
-              </div>
-              <div class="icon">
-                <i class="fas fa-comments"></i>
-              </div>
-              <a routeLink="/comments"class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-        </div>
-        <!-- /.row -->
-        <!-- Main row -->
-        <div class="row">
-          <!-- Left col -->
-          <section class="col-lg-7 connectedSortable">
-            <!-- Custom tabs (Charts with tabs)-->
-           
-
-          </section>
-          <!-- /.Left col -->
-          <!-- right col (We are only adding the ID to make the widgets sortable)-->
-          <section class="col-lg-5 connectedSortable">
-
-            
-            <!-- /.card -->
-
-            
-            <!-- /.card -->
-          </section>
-          <!-- right col -->
-        </div>
-        <!-- /.row (main row) -->
-      </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
+    <router-outlet></router-outlet>
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
@@ -499,4 +397,3 @@
 <!-- ./wrapper -->
 
 </body>
-<router-outlet></router-outlet>
