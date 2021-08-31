@@ -2,12 +2,12 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1 class="m-0">Article</h1>
+        <h1 class="m-0">Card</h1>
       </div><!-- /.col -->
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
           <li class="breadcrumb-item"><a routerLink="/dashboard">Home</a></li>
-          <li class="breadcrumb-item active">Article</li>
+          <li class="breadcrumb-item active">Card</li>
         </ol>
       </div><!-- /.col -->
     </div><!-- /.row -->
@@ -19,10 +19,8 @@
       <div class="col-12">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Article DataTable</h3>
+            <h3 class="card-title">Card DataTable</h3>
           </div>
-
-         
           <div class="card-body">
             <table id="example2" class="table table-bordered table-hover">
               <thead>
@@ -30,20 +28,17 @@
                 <th>Photo</th>
                 <th>Header</th>
                 <th>Contents</th>
-                <th>AddTime</th>
                 <th>Actions</th>
               </tr>
               </thead>
               <tbody>
               <tr>
-                <td>{{articles.photo}}</td>
-                <td>{{articles.header}}</td>
-                <td>{{articles.contents}}</td>
-                <td>{{articles.addtime}}</td>
+                <td>{{cards.photo}}</td>
+                <td>{{cards.header}}</td>
+                <td>{{cards.contents}}</td>
                 <td>
                   <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default"><i class="fas fa-edit"> </i>
                     Edit
-                  
                   </button>
                   <button type="button" class="btn btn-danger ">
                     <i class="fas fa-edit"> </i>
@@ -53,11 +48,10 @@
               </tr>
               </tbody>
               <tfoot>
-              <tr *ngIf="card.count<13">
+              <tr>
                 <th>Photo</th>
                 <th>Header</th>
                 <th>Contents</th>
-                <th>AddTime</th>
                 <th>Actions</th>
               </tr>
               </tfoot>
@@ -70,7 +64,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title">Default Modal</h4>
+              <h4 class="modal-title">Edit Card</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
