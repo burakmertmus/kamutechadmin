@@ -19,18 +19,19 @@
       <div class="col-12">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">DataTable with minimal features & hover style</h3>
+            <h3 class="card-title">Article DataTable</h3>
           </div>
+
          
           <div class="card-body">
             <table id="example2" class="table table-bordered table-hover">
               <thead>
               <tr>
-                <th>Rendering engine</th>
-                <th>Browser</th>
-                <th>Platform(s)</th>
-                <th>Engine version</th>
-                <th>CSS grade</th>
+                <th>Photo</th>
+                <th>Header</th>
+                <th>Contents</th>
+                <th>AddTime</th>
+                <th>Actions</th>
               </tr>
               </thead>
               <tbody>
@@ -41,16 +42,27 @@
                 </td>
                 <td>Win 95+</td>
                 <td> 4</td>
-                <td>X</td>
+                <td>
+                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default"><i class="fas fa-edit"> </i>
+                    Edit
+                  
+                  </button>
+                  <button type="button" class="btn btn-danger ">
+                    <i class="fas fa-edit"> </i>
+                    Delete <i class="far fa-trash-alt"></i>
+                  </button>
+                  
+                  
+                </td>
               </tr>
               </tbody>
               <tfoot>
-              <tr>
-                <th>Rendering engine</th>
-                <th>Browser</th>
-                <th>Platform(s)</th>
-                <th>Engine version</th>
-                <th>CSS grade</th>
+              <tr *ngIf="card.count<13">
+                <th>Photo</th>
+                <th>Header</th>
+                <th>Contents</th>
+                <th>AddTime</th>
+                <th>Actions</th>
               </tr>
               </tfoot>
             </table>
@@ -58,8 +70,28 @@
           <!-- /.card-body -->
         </div>
         <!-- /.card -->
+      </div> <div class="modal fade" id="modal-default">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Default Modal</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>One fine body&hellip;</p>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
       </div>
-      <!-- /.col -->
+      <!-- /.modal -->
     </div>
   </div>
   <!-- /.container-fluid -->
