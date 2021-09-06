@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Article } from '../models/article';
+import { ArticleService } from '../services/article.service';
 
 @Component({
   selector: 'app-article',
@@ -8,16 +9,30 @@ import { Article } from '../models/article';
 })
 export class ArticleComponent implements OnInit {
   date = new Date();
-  articles:Article={
-    id:1,
-    addtime:this.date,
-    header:"Kamu Kurumu İşçilerinin Zam Detayları Belli Oldu",
-    contents:"Kamu kurumlarında çalışan ve sayıları yaklaşık 700 bin olan 4/D sürekli işçiyi kapsayan 2021 Yılı Kamu Toplu İş Sözleşmeleri Çerçeve Anlaşa Protokolü imzalandı. 2021-2022 yılları için geçerli olacak Kamu Çerçeve Protokolüne göre kamu işçilerinin maaş zammı ile sosyal hak ve yardımlarındaki artışlar şu şekilde gerçekleşti: Aylık çıplak brüt ücreti 4.100. TL’nin (günlük 136,67) altında olan işçilerin ücretleri brüt 4.100.- TL’ye (günlük 136,67)  yükseltilecek",
-    photo:"url"
-  };
-  constructor() { }
+  articles?:Article[];
+  constructor(private articleService:ArticleService) { }
 
   ngOnInit() {
+    this.articleService.getArticles().subscribe(data=>{
+      this.articles=data;
+    })
+  }
+
+  createArticles(article:Article){
+    this.articleService.createArticles(article);
+    window.location.reload();
+  }
+
+  updateArticlesForm(article:Article, id:number)
+  {
+      this.articleService.updateArticles(article, id);
+      window.location.reload();
+  }
+
+  deleteArticle(id:number)
+  {
+      this.articleService.deleteArticle(id);
+      window.location.reload();
   }
 
 }

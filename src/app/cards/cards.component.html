@@ -32,10 +32,10 @@
               </tr>
               </thead>
               <tbody>
-              <tr>
-                <td>{{cards.photo}}</td>
-                <td>{{cards.header}}</td>
-                <td>{{cards.contents}}</td>
+              <tr *ngFor="let card of cards">
+                <td>{{card.photo}}</td>
+                <td>{{card.header}}</td>
+                <td>{{card.contents}}</td>
                 <td>
                   <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default"><i class="fas fa-edit"> </i>
                     Edit

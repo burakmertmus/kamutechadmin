@@ -35,11 +35,11 @@
               </tr>
               </thead>
               <tbody>
-              <tr>
-                <td>{{articles.photo}}</td>
-                <td>{{articles.header}}</td>
-                <td>{{articles.contents}}</td>
-                <td>{{articles.addtime}}</td>
+              <tr *ngFor="let article of articles">
+                <td>{{article.photo}}</td>
+                <td>{{article.header}}</td>
+                <td>{{article.contents}}</td>
+                <td>{{article.addtime}}</td>
                 <td>
                   <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default"><i class="fas fa-edit"> </i>
                     Edit

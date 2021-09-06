@@ -22,7 +22,6 @@
             <h3 class="card-title">Commets DataTable</h3>
           </div>
 
-         
           <div class="card-body">
             <table id="example2" class="table table-bordered table-hover">
               <thead>
@@ -37,19 +36,22 @@
               </thead>
               <tbody>
               <tr>
-                <td>{{coments.photo}}</td>
-                <td>{{coments.comentContent}}</td>
-                <td>{{coments.nameSurname}}</td>
-                <td>{{coments.posission}}</td>
-                <td>{{coments.organisation}}</td>
-                <td>
-                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default"><i class="fas fa-edit"> </i>
-                    Edit
-                  </button>
-                  <button type="button" class="btn btn-danger ">
-                    Delete <i class="far fa-trash-alt"></i>
-                  </button>
-                </td>
+                <div *ngFor="let comment of comments">
+                  <td>{{comment.photo}}</td>
+                  <td>{{comment.comentContent}}</td>
+                  <td>{{comment.nameSurname}}</td>
+                  <td>{{comment.posission}}</td>
+                  <td>{{comment.organisation}}</td>
+                  <td>
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default"><i class="fas fa-edit"> </i>
+                      Edit
+                    </button>
+                    <button type="button" class="btn btn-danger ">
+                      Delete <i class="far fa-trash-alt"></i>
+                    </button>
+                  </td>
+                </div>
+                  
               </tr>
               </tbody>
               <tfoot>
