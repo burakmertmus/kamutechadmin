@@ -7,13 +7,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PagesComponent } from './pages/pages.component';
 
 const routes: Routes = [
-  { path: '',   redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'pages', component: PagesComponent },
   { path: 'articles', component: ArticleComponent },
   { path: 'comments', component: CommentsComponent },
   { path: 'cards', component: CardsComponent },
-  { path: '**', component: DashboardComponent }
+  { path: '**',   redirectTo: '/dashboard', pathMatch: 'full' },
 
   
 ];

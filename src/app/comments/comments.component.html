@@ -35,24 +35,24 @@
               </tr>
               </thead>
               <tbody>
-              <tr>
                 <div *ngFor="let comment of comments">
-                  <td>{{comment.photo}}</td>
-                  <td>{{comment.comentContent}}</td>
-                  <td>{{comment.nameSurname}}</td>
-                  <td>{{comment.posission}}</td>
-                  <td>{{comment.organisation}}</td>
-                  <td>
-                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default"><i class="fas fa-edit"> </i>
-                      Edit
-                    </button>
-                    <button type="button" class="btn btn-danger ">
-                      Delete <i class="far fa-trash-alt"></i>
-                    </button>
-                  </td>
+                  <tr>
+                    <td>{{comment.photo}}</td>
+                    <td>{{comment.comentContent}}</td>
+                    <td>{{comment.nameSurname}}</td>
+                    <td>{{comment.posission}}</td>
+                    <td>{{comment.organisation}}</td>
+                    <td>
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default"><i class="fas fa-edit"> </i>
+                        Edit
+                      </button>
+                      <button type="button" class="btn btn-danger ">
+                        Delete <i class="far fa-trash-alt"></i>
+                      </button>
+                    </td>
+                   </tr>
                 </div>
-                  
-              </tr>
+              
               </tbody>
               <tfoot>
               <tr>
@@ -80,6 +80,9 @@
             </div>
             <div class="modal-body">
               <p>One fine body&hellip;</p>
+              <input type="text" class="form-control" id="updateInputPhoto" placeholder="Enter Photo">
+              <input type="text" class="form-control" id="updateInputHeader" placeholder="Enter email">
+              <input type="text" class="form-control" id="updateInputContent" placeholder="Enter email">
             </div>
             <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

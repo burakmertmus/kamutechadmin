@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CardsDto } from '../dtos/CardsDto';
+import { CardUpdateDto } from '../dtos/CardUpdateDto';
 import { Cards } from '../models/cards';
 import { CardService } from '../services/card.service';
 
@@ -8,29 +10,40 @@ import { CardService } from '../services/card.service';
   styleUrls: ['./cards.component.css']
 })
 export class CardsComponent implements OnInit {
-  cards:Cards[];
-  // {
-  //   id:1,
-  //   contents:"Kamuda 657 sayılı Kanunun “4/D bendi” kapsamında çalışan işçilerin, puantaj, bordro, maaş, SGK bildirgeleri toplu iş sözleşmesi, özlük, sicil işlemleri... ve daha fazlası",
-  //   header:"e-Kamuİşçi",
-  //   photo:"url"
-  // };
+  
+
   constructor(private cardService:CardService) { }
- 
+  cardsdto:CardsDto[];
+  cardsUpdateModel:CardUpdateDto={photoUrl:"",content:"",header:""};
+  std:boolean=false;
   ngOnInit()
   {
+    this.std=true;
+    if(this.std)
+    {
       this.cardService.getCards().subscribe(data => {
-          this.cards = data;
+        this.cardsdto = data;
       })
+    }
+    
   }
 
-  createCards(card:Cards)
+  fillModalForm(id:number): void {
+     this.cardsUpdateModel.photoUrl=this.cardsdto.find(x=>x.id == id).photoUrl;
+     this.cardsUpdateModel.header=this.cardsdto.find(x=>x.id == id).header;
+     this.cardsUpdateModel.content=this.cardsdto.find(x=>x.id == id).content;
+ }
+ 
+  
+
+  
+  createCards(card:CardsDto)
   {
       this.cardService.createCards(card);
       window.location.reload();
   }
 
-  updateCardsForm(card:Cards, id:number)
+  updateCard(card:CardUpdateDto, id:number)
   {
       this.cardService.updateCards(card, id);
       window.location.reload();

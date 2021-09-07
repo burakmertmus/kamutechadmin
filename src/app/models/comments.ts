@@ -1,8 +1,9 @@
 export class Comments {
     id:number;
-    photo:string;
+    phtooUrl:string;
     comentContent:string;
-    nameSurname:string;
+    name:string;
+    surname:string;
     posission:string;
     organisation:string;
 }

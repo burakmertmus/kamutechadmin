@@ -1,32 +1,31 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Cards } from '../models/cards';
 import { Observable } from 'rxjs/internal/Observable';
+import { CardsDto } from '../dtos/CardsDto';
+import { CardUpdateDto } from '../dtos/CardUpdateDto';
 @Injectable({
   providedIn: 'root'
 })
 export class CardService {
 
-
-
   constructor(private httpClient:HttpClient) { }
   path = "https://localhost:44360/api/";
 
 
-  getCards(): Observable<Cards[]> {
-    return this.httpClient.get<Cards[]>(this.path + "Cards");
+  getCards(): Observable<CardsDto[]> {
+    return this.httpClient.get<CardsDto[]>(this.path + "Cards");
   }
 
-  createCards(card:Cards)
+  createCards(card:CardsDto)
   {
       this.httpClient.post(this.path + 'Cards', card).subscribe(data => {
-          let l =< Cards > JSON.parse(JSON.stringify(data));
+          let l =< CardsDto > JSON.parse(JSON.stringify(data));
       });
   }
 
-  updateCards(card:Cards,id:number){
+  updateCards(card:CardUpdateDto,id:number){
     this.httpClient.put(this.path+'Cards/'+id,card).subscribe(data=>{
-      let l=<Cards>JSON.parse(JSON.stringify(data));
+      let l=<CardUpdateDto>JSON.parse(JSON.stringify(data));
     });
   }
 
