@@ -10,10 +10,13 @@ export class DashboardService {
 
 
     constructor(private httpClient:HttpClient) { }
-  path = "https://localhost:44360/api/";
+    
+    
+    path = "https://localhost:44360/api/";
 
-  getDashboards(): Observable<Dashboard[]> {
-    return this.httpClient.get<Dashboard[]>(this.path + "Dashboards");
-  }
+
+    getCounts(): Observable<Dashboard> {
+    return this.httpClient.get<Dashboard>(this.path + "Common");
+    }
 
 }

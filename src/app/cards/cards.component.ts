@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CardsDto } from '../dtos/CardsDto';
 import { CardUpdateDto } from '../dtos/CardUpdateDto';
-import { Cards } from '../models/cards';
+import { AlertifyService } from '../services/alertify.service';
 import { CardService } from '../services/card.service';
-
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',
@@ -12,7 +11,7 @@ import { CardService } from '../services/card.service';
 export class CardsComponent implements OnInit {
   
 
-  constructor(private cardService:CardService) { }
+  constructor(private cardService:CardService,private alertifyService:AlertifyService) { }
   cardsdto:CardsDto[];
   cardsUpdateModel:CardUpdateDto={photoUrl:"",content:"",header:""};
   std:boolean=false;
@@ -45,7 +44,9 @@ export class CardsComponent implements OnInit {
 
   updateCard(card:CardUpdateDto, id:number)
   {
+      
       this.cardService.updateCards(card, id);
+     
       window.location.reload();
   }
 

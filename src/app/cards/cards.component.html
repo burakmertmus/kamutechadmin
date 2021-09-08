@@ -51,31 +51,33 @@
                               </button>
                             </div>
                             <div class="modal-body">
-                              <h6>Url</h6>
-                              <input type="text" class="form-control" id="updateInputPhoto" value="{{cardsUpdateModel.photoUrl}}">
+                              <form #updateForm="ngForm" (ngSubmit)="updateCard(cardsUpdateModel,card.id)" class="d-flex">
+                                <h6>Url</h6>
+                              <input type="text" class="form-control" name="updateInputPhoto" [(ngModel)]="cardsUpdateModel.photoUrl" value="{{cardsUpdateModel.photoUrl}}">
                               <h6>Header</h6>
-                              <input type="text" class="form-control" id="updateInputHeader" value="{{cardsUpdateModel.header}}">
+                              <input type="text" class="form-control" name="updateInputHeader" [(ngModel)]="cardsUpdateModel.header" value="{{cardsUpdateModel.header}}">
                               <h6>Content</h6>
-                              <input type="text" class="form-control" id="updateInputContent" value="{{cardsUpdateModel.content}}">
+                              <input type="text" class="form-control" name="updateInputContent"  [(ngModel)]="cardsUpdateModel.content" value="{{cardsUpdateModel.content}}">
+                              <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary"  data-save="modal"  >Save changes</button>
+                                
+                              </div>
+                              </form>
+                              
                             </div>
-                            <div class="modal-footer justify-content-between">
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                              <button type="button" (click)="createCards(cardsUpdateModel,card.id)" class="btn btn-primary">Save changes</button>
-                            </div>
+                           
                           </div>
                           <!-- /.modal-content -->
                         </div>
                         <!-- /.modal-dialog -->
                       </div>
-                      <button type="button" (clik)="deleteCard(card.id)" class="btn btn-danger ">
-                        <i class="fas fa-edit"> </i>
-                        Delete <i class="far fa-trash-alt"></i>
+                      <button type="button" (click)="deleteCard(card.id)" class="btn btn-danger d-flex">
+                        Delete
+                        <i class="far fa-trash-alt"></i>
                       </button>
                     </td>
                   </tr>
-
-                
-             
 
               </tbody>
               <tfoot>
@@ -92,11 +94,14 @@
         </div>
         <!-- /.card -->
       </div>
-     
+      
       <!-- /.modal -->
     </div>
   </div>
+
+  
   <!-- /.container-fluid -->
 </section>
+
 <!-- /.content -->
 </div>
