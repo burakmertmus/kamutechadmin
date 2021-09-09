@@ -11,7 +11,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 # Photos
 
-[Backend]
+## ->[Backend Codes]
+
 ![KamutechDashboard](https://github.com/burakmertmus/kamutechadmin/blob/master/KamutechDashboard.png)
  
 ![Cards](https://github.com/burakmertmus/kamutechadmin/blob/master/Cards.png)
@@ -25,4 +26,4 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 [db design link]: <https://app.dbdesigner.net/designer/schema/445953>
 
-[backend]: <https://github.com/burakmertmus/KamuTechApi>
+[backend codes]: <https://github.com/burakmertmus/KamuTechApi>
